@@ -48,8 +48,9 @@ class BlogPage(Page):
     ]
 
     content_panels = Page.content_panels + [
+        FieldPanel('intro'),
         MultiFieldPanel([
-            FieldPanel('intro'),
+            FieldPanel('tags'),
             FieldPanel('date'),
         ], heading="Blog information"),
         FieldPanel('body', classname="full"),
