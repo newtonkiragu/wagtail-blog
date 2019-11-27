@@ -24,6 +24,13 @@ class BlogPage(Page):
     body = RichTextField(blank=True)
     date = models.DateField("Post date")
 
+    def main_image(self):
+        gallery_item = self.gallery_items.first()
+        if gallery_item:
+            return gallery_item.image
+        else:
+            return None
+
     search_fields = Page.search_fields + [
         index.SearchField('intro'),
         index.SearchField('body'),
