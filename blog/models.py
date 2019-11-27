@@ -25,7 +25,7 @@ class BlogPage(Page):
     date = models.DateField("Post date")
 
     def main_image(self):
-        gallery_item = self.gallery_items.first()
+        gallery_item = self.gallery_images.first()
         if gallery_item:
             return gallery_item.image
         else:
